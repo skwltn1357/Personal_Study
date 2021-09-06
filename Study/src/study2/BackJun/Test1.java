@@ -8,19 +8,21 @@ public class Test1 {
 	// 170 * 10(판매) = 1700
 	// 최초로  총 수입이 총 비용보다 많아져 이익이 발생하는 지점을 손익분기점(BREAK-EVEN POINT)이라고 한다.
 	
-	public static int num(int a, int b, int c) {
-		int count = 0;
+	public static long num(int a, int b, int c) {
+		long count = 0;
 		boolean boo = true;
+		
+		if( b > c ) {
+			return -1;
+		}
 		
 		while(boo) {
 			++count;
 			if(a + b * count < c * count) {
 				boo = false;
-			}//else {
-//				count = -1;
-//				boo = false;
-//			}
+			}
 		}
+		
 		return count;
 	}
 	
